@@ -63,12 +63,10 @@ public class EmployeeService {
     public void delete(int id)
     {
 
-        //functional programming
-        Predicate<? super Employee> predicate =
-                employee -> employee.getId()==(id);
-
+       
         //deleting by id
-         employees.remove(predicate);
+              employees.removeIf(employee-> employee.getId()==id);
+
 
 
     }
